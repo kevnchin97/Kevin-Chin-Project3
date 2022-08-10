@@ -1,14 +1,12 @@
-import axios from 'axios';
+
 import './App.css';
 import { useState } from 'react';
 import Form from './Form';
+import DisplayData from './DisplayData';
 
 function App() {
   // user's input placed in state. Will be updated based on whatever is in setArtistInput. 
   const [artistInput, setArtistInput] = useState('');
-  const [venue, setVenue] = useState('');
-  const [date, setDate] = useState('');
-  const [eventName, setEventName] = useState('');
   const [globalData, setGlobalData] = useState([]);
 
   const fetchArtist = async () => {
@@ -28,10 +26,6 @@ function App() {
     }
   }
 
-  // place into separate components
-  // const DisplayData = () => {
-  // return globalData.map((item, i) => <div>{item.name}{item._embedded.venues.map((venue, i) => <div>{venue.city}</div>)}</div>)
-  // }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,23 +36,34 @@ function App() {
     setArtistInput(e.target.value)
   }
 
+  const renderDisplayData = () => {
+    return globalData.map((event, i) => <DisplayData data={event} />)
+  }
 
   return (
-    <main className="wrapper">
-      <h1>Concert Locator</h1>
+    <main className="wrapper mainContent">
+      <h1>Showzam: Concert Locator</h1>
       <Form
         userInput={userInput}
         handleSubmit={handleSubmit}
         artistInput={artistInput}
       />
-      <DisplayData />
+      <div className="displayRenders">
+        {renderDisplayData()}
+      </div>
     </main>
   );
 }
 
 export default App;
 
-  // axios({
+
+
+
+
+
+
+{/* // axios({
   //   url: "https://app.ticketmaster.com/discovery/v2/events?apikey=Ldp2NSXQg81izAeQDvbIm4gHfXgBPkdd&locale=*&classificationName=Music&genreId=KnvZfZ7vAvF",
   //   method: "GET",
   //   dataResponse: "json",
@@ -66,5 +71,5 @@ export default App;
   //     keyword: artistInput
   //   }
 
-  // })
+  // }) */}
 
