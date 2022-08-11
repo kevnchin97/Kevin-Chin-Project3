@@ -8,7 +8,7 @@ function App() {
   // user's input placed in state. Will be updated based on whatever is in setArtistInput. 
   const [artistInput, setArtistInput] = useState('');
   const [globalData, setGlobalData] = useState([]);
-
+  const [errorHandling, setErrorHandling] = useState(false);
   const fetchArtist = async () => {
     const url = new URL('https://calm-inlet-25920.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events?apikey=Ldp2NSXQg81izAeQDvbIm4gHfXgBPkdd&locale=*');
     // &classificationName=Music&genreId=KnvZfZ7vAvF'
@@ -25,8 +25,11 @@ function App() {
       const data = await response.json();
       setGlobalData(data._embedded.events);
       console.log(data._embedded.events)
+      setErrorHandling(false);
     } catch (err) {
+      setErrorHandling(true);
       console.log(err);
+
     }
   }
 
@@ -51,8 +54,9 @@ function App() {
         userInput={userInput}
         handleSubmit={handleSubmit}
         artistInput={artistInput}
+        error={errorHandling}
       />
-      <p>"SHOWZAM" is a concert locator created by Kevin Chin using vanilla Reactjs and the TicketMaster API. </p>
+      <p>"SHOWZAM" is a concert locator project created by Kevin Chin using vanilla Reactjs and the TicketMaster API. </p>
       <div className="displayRenders">
         {renderDisplayData()}
       </div>

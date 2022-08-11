@@ -15,7 +15,7 @@ function DisplayData(props) {
             <>
                 <p className="centerAlign"> {`
                    ${props.data.dates.start.localDate} @
-                    ${props.data.dates.start.localTime ? `${props.data.dates.start.localTime}` : "timing for this event has not been established at this time."}
+                    ${props.data.dates.start.localTime ? `${props.data.dates.start.localTime}` : "timing for this event has not been established as of yet."}
                 `}
 
                 </p>
@@ -27,7 +27,6 @@ function DisplayData(props) {
 
         )
     }
-
 
     return (
         <div className="overall">
