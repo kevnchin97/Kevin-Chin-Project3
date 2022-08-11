@@ -46,7 +46,8 @@ function App() {
 
   return (
     <main className="wrapper mainContent">
-      <h1>Showzam: Concert Locator</h1>
+      <h1>SHOWZAM</h1>
+      <p>"SHOWZAM" is a concert locator created by Kevin Chin using ReactJS and the TicketMaster API. </p>
       <Form
         userInput={userInput}
         handleSubmit={handleSubmit}

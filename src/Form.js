@@ -1,9 +1,9 @@
 function Form({ userInput, handleSubmit, artistInput }) {
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor='artist'>ENTER AN EDM ARTIST </label>
+            <label htmlFor='artist'>ENTER A DANCE / ELECTRONIC ARTIST </label>
             <input type="text" id="artist" onChange={userInput} value={artistInput} />
-            <button>Submit</button>
+            <button>Dance The Night Away</button>
         </form>
     )
 }

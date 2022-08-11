@@ -3,7 +3,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   /* background-color: rgb(243 244 246); */
-  /* background-image: url('./assets/heropic.jpg');
+  /* background-image: url('./assets/heropic.png');
   background-size: cover;
   background-repeat: no-repeat; */
 
@@ -267,17 +267,23 @@ img {
 
 h1,
 h2,
-h3,
-label,
-p {
-  font-family: 'Rubik', sans-serif;
-  color: #1da1f2;
+h3 {
+  font-family: 'Roboto', sans-serif;
+  color: #1D3557;
 }
 
+label,
+p {
+  font-family: 'Nunito', sans-serif;
+  color: #0077B6;
+  font-weight: 400;
+}
+
+
 h1 {
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
-  color: #ff4663;
+  color: #F1FAEE;
   font-size: 5rem;
 }
 
@@ -288,15 +294,15 @@ h2 {
 
 h3,
 h4 {
-  font-weight: 600;
-  font-size: 2rem;
+  font-weight: 700;
+  font-size: 1.25rem;
   text-align: center;
 }
 
 p,
 label {
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -310,7 +316,7 @@ label {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #cbd8c7;
 }
 
 form {
@@ -327,12 +333,39 @@ form {
 
 .leftAlign {
   text-align: left;
+  width: 50%
+}
+
+.artistName {
+  color: #03045E;
 }
 
 .centerAlign {
   text-align: center;
+  width: 50%;
 }
 
-.rightAlign {
-  text-align: right;
+button {
+  text-decoration: none;
+  border: none;
+  padding: 10px;
+  background: #00B4D8;
+  color: #F1FAEE;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+}
+
+.mainContent h1 {
+  background-color: #00B4D8;
+}
+
+
+input {
+  height: 38.5px;
+  margin: 0px 10px;
 }

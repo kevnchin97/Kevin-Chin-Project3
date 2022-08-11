@@ -16,10 +16,10 @@ function DisplayData(props) {
             <div className="imgContainer"><img src={`${props.data.images[0].url}`}></img>
             </div>
             <div className="displayRenderStyles">
-                <h2 className="leftAlign">{props.data.name}</h2>
+                <h2 className="leftAlign artistName">{props.data.name}</h2>
                 {renderVenues()}
                 <p className="centerAlign">Starts on {props.data.dates.start.localDate} at {props.data.dates.start.localTime}</p>
-                <button className="rightAlign">< a href={`${props.data.url}`} target="_blank">Tickets</a></button>
+                <button className="rightAlign">< a href={`${props.data.url}`} target="_blank">Find Tickets</a></button>
             </div>
         </div>
     );
