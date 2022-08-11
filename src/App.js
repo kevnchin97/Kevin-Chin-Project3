@@ -47,12 +47,12 @@ function App() {
   return (
     <main className="wrapper mainContent">
       <h1>SHOWZAM</h1>
-      <p>"SHOWZAM" is a concert locator created by Kevin Chin using ReactJS and the TicketMaster API. </p>
       <Form
         userInput={userInput}
         handleSubmit={handleSubmit}
         artistInput={artistInput}
       />
+      <p>"SHOWZAM" is a concert locator created by Kevin Chin using vanilla Reactjs and the TicketMaster API. </p>
       <div className="displayRenders">
         {renderDisplayData()}
       </div>

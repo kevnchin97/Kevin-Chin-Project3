@@ -10,6 +10,24 @@ function DisplayData(props) {
             </div>
         ));
     };
+    const renderDate = () => {
+        return (
+            <>
+                <p className="centerAlign"> {`
+                   ${props.data.dates.start.localDate} @
+                    ${props.data.dates.start.localTime ? `${props.data.dates.start.localTime}` : "timing for this event has not been established at this time."}
+                `}
+
+                </p>
+
+                <button className="rightAlign">
+                    < a href={`${props.data.url}`} target="_blank">Find Tickets</a>
+                </button>
+            </>
+
+        )
+    }
+
 
     return (
         <div className="overall">
@@ -18,8 +36,9 @@ function DisplayData(props) {
             <div className="displayRenderStyles">
                 <h2 className="leftAlign artistName">{props.data.name}</h2>
                 {renderVenues()}
-                <p className="centerAlign">Starts on {props.data.dates.start.localDate} at {props.data.dates.start.localTime}</p>
-                <button className="rightAlign">< a href={`${props.data.url}`} target="_blank">Find Tickets</a></button>
+                {renderDate()}
+                {/* <p className="centerAlign">Starts on {props.data.dates.start.localDate} at {props.data.dates.start.localTime}</p>
+                <button className="rightAlign">< a href={`${props.data.url}`} target="_blank">Find Tickets</a></button> */}
             </div>
         </div>
     );

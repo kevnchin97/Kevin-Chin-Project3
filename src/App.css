@@ -352,6 +352,12 @@ button {
   background: #00B4D8;
   color: #F1FAEE;
   text-align: center;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #F1FAEE;
+  color: #00B4D8;
 }
 
 a {
