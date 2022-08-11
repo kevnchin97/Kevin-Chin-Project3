@@ -10,10 +10,14 @@ function App() {
   const [globalData, setGlobalData] = useState([]);
 
   const fetchArtist = async () => {
-    const url = new URL('https://calm-inlet-25920.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events?apikey=Ldp2NSXQg81izAeQDvbIm4gHfXgBPkdd&locale=*&classificationName=Music&genreId=KnvZfZ7vAvF');
+    const url = new URL('https://calm-inlet-25920.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events?apikey=Ldp2NSXQg81izAeQDvbIm4gHfXgBPkdd&locale=*');
+    // &classificationName=Music&genreId=KnvZfZ7vAvF'
     url.search = new URLSearchParams({
       apikey: 'Ldp2NSXQg81izAeQDvbIm4gHfXgBPkdd',
-      keyword: artistInput
+      keyword: artistInput,
+      classificationName: 'Music',
+      genreId: 'KnvZfZ7vAvF',
+
     });
 
     try {

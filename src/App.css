@@ -1,7 +1,8 @@
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%;
+  background-color: rgb(243 244 246);
 }
 
 body {
@@ -250,28 +251,39 @@ template {
 }
 
 .imgContainer {
-  width: 700px;
+  width: 50%;
 
 }
 
 img {
   width: 100%;
+  border-radius: 20px;
 }
 
 h1,
 h2,
 h3,
+label,
 p {
   font-family: 'Rubik', sans-serif;
+  color: #1da1f2;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+  text-align: center;
+  color: #ff4663;
 }
 
 h1 {
-  font-weight: 600;
-  font-size: 3rem;
-  text-align: center;
+  font-size: 5rem;
 }
 
-h2,
+h2 {
+  font-size: 3rem;
+}
+
 h3,
 h4 {
   font-weight: 600;
@@ -301,4 +313,8 @@ label {
 form {
   margin: 100px 0px;
   text-align: center;
+}
+
+.displayRenderStyles {
+  width: 50%;
 }
