@@ -2,12 +2,6 @@ html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  /* background-color: rgb(243 244 246); */
-  /* background-image: url('./assets/heropic.png');
-  background-size: cover;
-  background-repeat: no-repeat; */
-
-
 }
 
 body {
@@ -260,6 +254,14 @@ template {
 
 }
 
+.spacer {
+  background-image: url(/src/assets/heropic.jpg);
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 img {
   width: 100%;
   border-radius: 20px;
@@ -371,7 +373,61 @@ a {
 }
 
 
+
 input {
   height: 38.5px;
   margin: 0px 10px;
+}
+
+.fadeAway {
+  animation: fade 10s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+footer {
+  position: relative;
+  bottom: -347px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #caf0f8;
+}
+
+.footerContent {
+  color: #027da9;
+}
+
+@media (max-width: 460px) {
+  .imgContainer {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .overall {
+    flex-direction: column;
+
+  }
+
+  .leftAlign {
+    text-align: center;
+    width: 100%;
+  }
+
+  .displayRenderStyles {
+    flex-direction: column;
+  }
 }
