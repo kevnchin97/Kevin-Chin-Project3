@@ -11,6 +11,7 @@ function DisplayData(props) {
         ));
     };
     const renderDate = () => {
+
         return (
             <>
                 <p className="centerAlign"> {`
@@ -27,6 +28,7 @@ function DisplayData(props) {
 
         )
     }
+
 
     return (
         <div className="overall">

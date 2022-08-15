@@ -8,14 +8,18 @@ import Footer from './Footer';
 function App() {
   // user's input placed in state. Will be updated based on whatever is in setArtistInput. 
   const [artistInput, setArtistInput] = useState('');
+  // data fetched from API in an array
   const [globalData, setGlobalData] = useState([]);
+  // default errors should be false and only changed when errors are encountered.
   const [errorHandling, setErrorHandling] = useState(false);
 
 
-
+  // awaiting for user input prior to fetching data from API
   const fetchArtist = async () => {
+    // proxy required due to CORS.
     const url = new URL('https://calm-inlet-25920.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events?apikey=Ldp2NSXQg81izAeQDvbIm4gHfXgBPkdd&locale=*');
-    // &classificationName=Music&genreId=KnvZfZ7vAvF'
+
+    // search results based on certain parameters. 
     url.search = new URLSearchParams({
       apikey: 'Ldp2NSXQg81izAeQDvbIm4gHfXgBPkdd',
       keyword: artistInput,
@@ -24,32 +28,35 @@ function App() {
 
     });
 
+    // fetching data.
     try {
       const response = await fetch(url);
       const data = await response.json();
       setGlobalData(data._embedded.events);
-      console.log(data._embedded.events)
       setErrorHandling(false);
+      // error handling.
     } catch (err) {
       setErrorHandling(true);
-      console.log(err);
-
     }
   }
 
 
+  // Stores user input into useState. 
+  const userInput = (e) => {
+    setArtistInput(e.target.value)
+  }
 
+
+  // upon submit, call API 
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchArtist();
   }
 
-  const userInput = (e) => {
-    setArtistInput(e.target.value)
-  }
 
+  // function that will map through each event and trigger DisplayData component. 
   const renderDisplayData = () => {
-    return globalData.map((event, i) => <DisplayData data={event} />)
+    return globalData.map((event) => <DisplayData data={event} key={event.id} />)
   }
 
   return (
