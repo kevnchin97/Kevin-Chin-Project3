@@ -3,7 +3,7 @@ import React from "react";
 function DisplayData(props) {
     const renderVenues = () => {
         return props.data._embedded.venues.map((venue) => (
-            <div className="centerAlign">
+            <div className="centerAlign" key={venue.id}>
                 <h3>{venue.name}</h3>
                 <p>{`${venue.address.line1} -  ${venue.city.name}, ${venue.country.countryCode}`}</p>
                 {/* ${venue.state.name} */}
