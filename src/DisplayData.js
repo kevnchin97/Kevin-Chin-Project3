@@ -22,7 +22,7 @@ function DisplayData(props) {
 
                 </p>
                 <button className="rightAlign">
-                    < a href={`${props.data.url}`} target="_blank">Find Tickets</a>
+                    < a href={`${props.data.url}`} target="_blank" rel="noreferrer">Find Tickets</a>
                 </button>
             </>
 
