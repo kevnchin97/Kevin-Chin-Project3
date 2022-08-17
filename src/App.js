@@ -69,6 +69,7 @@ function App() {
         artistInput={artistInput}
         error={errorHandling}
       />
+      {/* runs function renderdisplaydata and displays results */}
       <div className="displayRenders">
         {renderDisplayData()}
       </div>
@@ -81,20 +82,4 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-{/* // axios({
-  //   url: "https://app.ticketmaster.com/discovery/v2/events?apikey=Ldp2NSXQg81izAeQDvbIm4gHfXgBPkdd&locale=*&classificationName=Music&genreId=KnvZfZ7vAvF",
-  //   method: "GET",
-  //   dataResponse: "json",
-  //   params: {
-  //     keyword: artistInput
-  //   }
-
-  // }) */}
 

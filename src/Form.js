@@ -10,11 +10,6 @@ function Form({ userInput, handleSubmit, error, artistInput }) {
             <button>Dance The Night Away</button>
             {/* perhaps add transition to opacity 0 after 2 seconds? */}
             {error ? <h4 className="fadeAway">{`${artistInput} is not an electronic dance music artist. Please enter a different artist (Some top EDM DJs include: Kygo, David Guetta, The Chainsmokers, Illenium, etc).`}</h4> : null}
-            {/* <select defaultValue='sort'>
-                <option disabled value="sort">Sort By</option>
-                <option value="upcoming">Upcoming</option>
-                <option value="further">Further On</option>
-            </select> */}
         </form>
     )
 }

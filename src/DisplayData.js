@@ -2,6 +2,7 @@ import React from "react";
 
 function DisplayData(props) {
     const renderVenues = () => {
+        // using data from app.js, navigate to venues and map through each venue to display each venue's name, address, city, etc. 
         return props.data._embedded.venues.map((venue) => (
             <div className="centerAlign" key={venue.id}>
                 <h3>{venue.name}</h3>
@@ -11,7 +12,7 @@ function DisplayData(props) {
         ));
     };
     const renderDate = () => {
-
+        // conditional statement that returns date and time. if there is no time available - inform user. 
         return (
             <>
                 <p className="centerAlign"> {`
@@ -20,7 +21,6 @@ function DisplayData(props) {
                 `}
 
                 </p>
-
                 <button className="rightAlign">
                     < a href={`${props.data.url}`} target="_blank">Find Tickets</a>
                 </button>
@@ -32,14 +32,13 @@ function DisplayData(props) {
 
     return (
         <div className="overall">
+            {/* display images */}
             <div className="imgContainer"><img src={`${props.data.images[0].url}`}></img>
             </div>
             <div className="displayRenderStyles">
                 <h2 className="leftAlign artistName">{props.data.name}</h2>
                 {renderVenues()}
                 {renderDate()}
-                {/* <p className="centerAlign">Starts on {props.data.dates.start.localDate} at {props.data.dates.start.localTime}</p>
-                <button className="rightAlign">< a href={`${props.data.url}`} target="_blank">Find Tickets</a></button> */}
             </div>
         </div>
     );
