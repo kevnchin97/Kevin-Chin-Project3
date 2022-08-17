@@ -33,7 +33,7 @@ function DisplayData(props) {
     return (
         <div className="overall">
             {/* display images */}
-            <div className="imgContainer"><img src={`${props.data.images[0].url}`}></img>
+            <div className="imgContainer"><img src={`${props.data.images[0].url}`} alt="picture of artist"></img>
             </div>
             <div className="displayRenderStyles">
                 <h2 className="leftAlign artistName">{props.data.name}</h2>
